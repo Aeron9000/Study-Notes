@@ -1,21 +1,15 @@
-环境配置常用：
-conda create --name python3 python=3.7          ##创建一个新的python环境，python版本为3.7，环境名称为python3
-conda env list /conda info -e                               ##显示已创建的环境，会列出所有的环境名和对应路径
-conda activate python3                                       ##切换到环境名为python3的环境，切换后可通过python -V查看是否切换成功
-conda deactivate                                                 ##返回前一个python环境
-conda create --name py3 --clone python3          ##克隆环境，克隆一个名为python3的环境，新环境名为py3，两个环境配置相同
-conda remove --name python3 --all                   ##删除名为python3的环境
-
-
-
-
+cmd中环境配置常用：
+conda create --name py3 python=3.7          ##创建一个新的python环境，python版本为3.7，环境名称为py3
+conda env list /conda info -e               ##显示已创建的环境，会列出所有的环境名和对应路径
+activate py3                                ##切换到环境名为py3的环境，切换后可通过python -V查看是否切换成功
+deactivate py3                              ##返回前一个python环境
+conda create --name py31 --clone py3        ##克隆环境，克隆一个名为py3的环境，新环境名为py31，两个环境配置相同
+conda remove --name py3 --all               ##删除py3环境
 
 
 #!/usr/bin/env python     		#为了按UTF-8编码读取，通常在文件开头写上这两行。
 # -*- coding: utf-8 -*-
 
-Dos:	返回上一级	cd..
-		见>打开文件夹为返回	cd，打开程序不用。
 
 【函数：】
 name=input('your name:')    #返回字符串
@@ -40,8 +34,7 @@ u'...'    #Unicode字符串
 'I\'m \"OK\"!'    	#如\t回退光标，\r回车，\t表示制表符，\\表示的字符就是\。用r''表示''内不转义
 					#用'''...'''表示多行内容
 	
-#----------------------------------嵩天PYTHON语言程序设计----------------------------------------
-Chp.3
+#------Chp.3----------
 0B二进制，0O八进制，0X十六进制。浮点数存在不确定尾数，10^-16处有
 ==等于。科学计数法4.3e-3
 x//y 整数除		x%y余数		x**y 幂运算
@@ -136,7 +129,7 @@ striptime(str,tpl)
 
 函数：参数输入，函数体处理，结果return输出：IPO
 
-Chp.6 《组合数据类型》
+#------Chp.6 《组合数据类型》----------
 集合定义：元素唯一、无序、不可变{,,,}。{}是生成字典用的。
 S={"py",123,("Py",123)}
 S2=Set("pypy123")
@@ -150,10 +143,9 @@ jieba.lcut(s,cut_all=True)
 jieba.cut_for_search(s)
 jieba.add_word()
 
-Chp.7 《文件及数据格式化》
+#--------Chp.7 《文件及数据格式化》----------
 文本文件就是长字符串。统一编码。
 没有统一编码的是二进制文件。
-
 文件句柄=open("文件名：绝对或相对路径",  模式：只读r，覆盖写w，创建写x，追加写a)  #t文本方式,b二进制。
 #可用+。a+追加写并读文件。默认rt。如果不写入w+会清空文档。文档存在x会报错。
 读：
