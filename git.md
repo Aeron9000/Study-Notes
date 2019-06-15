@@ -64,5 +64,6 @@ git remote -v 		 		#查询远程库详细信息
 git push origin chs			#chs分支推送到远程库
 git checkout -b chs origin/chs		#远程oorigin的chs分支到本地
 git pull				#最新的提交从origin/chs抓下，在本地合并解决冲突
+```
 
 个人博客：https://blog.csdn.net/qm9090/article/details/90673007
