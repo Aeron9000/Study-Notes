@@ -1,5 +1,5 @@
 【cmd中环境配置】
-```
+```conda
 conda create --name py3 python=3.7      #创建一个新的python环境，python版本为3.7，环境名称为py3
 conda env list /conda info -e           #显示已创建的环境，会列出所有的环境名和对应路径
 activate py3                            #切换到环境名为py3的环境，切换后可通过python -V查看是否切换成功
@@ -8,13 +8,13 @@ conda create --name py31 --clone py3    #克隆环境，克隆一个名为py3的
 conda remove --name py3 --all           #删除py3环境
 ```
 
-```
+```python
 #!/usr/bin/env python			#为了按UTF-8编码读取，通常在文件开头写上这两行。
 # -*- coding: utf-8 -*-
 ```
 
 ## 函数：
-```
+```python
 name=input('your name:')    		#返回字符串
 a=int(a)    	 			#转为整数
 b=str(a)    	 			#转为字符
@@ -57,8 +57,8 @@ int()求整		float(x)变浮点			complex()变复数。
 eval()去两边的引号
 ```
 
-字符串
------
+## 字符串
+
 '''多行字符。程序中字符串无公式可以当做注释。'''
 切片[m,n,步长k]
 逆序输出[::-1]
@@ -104,9 +104,9 @@ u'Hi, %s' % u'Michael'   		#Unicode替换保持一致
 u'Hi, Michael'
 ```
 
-# 序列
+## 序列
 【set集合】：不可有可变对象
-```
+```python
 s = set([1, 2, 3])       		#是(list)
 s.add(4)
 s.remove(4)   		 		#删除元素
