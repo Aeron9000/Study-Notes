@@ -4,9 +4,9 @@
 ```git
 git config --global user.name "Name"
 git config --global user.email "email@qq.com"
-pwd				#当前目录
+pwd					#当前目录
 cd
-mkdir				#新建文件夹
+mkdir					#新建文件夹
 ```
 
 ```git
@@ -31,7 +31,7 @@ git reset --hard HEAD^^			#回退到上上次
 git reset --hard HEAD~77		#回退第前77次修改
 git reset --hard HEAD 8yfhY45		#回退到具体的版本号
 git checkout -- 1.txt			#撤销此次修改
-rm 1.txt						#删除文件,checkout可恢复
+rm 1.txt				#删除文件,checkout可恢复
 ```
 ## 连接GitHub远程仓库
 ```git
@@ -45,11 +45,11 @@ git clone https://github.com/Aeron9000/testgit2	#远程仓库克隆到本地
 ```git
 git branch chs   			#创建chs分支
 git checkout -b chs			#创建并切换到chs分支，只切换不带-b参数
-git branch				#查看现在分支
-git merge chs				#在master下与chs合并
+git branch				#查看当前分支
+git merge chs				#在master主分支下与chs合并
 git branch -d chs			#删除chs分支
 ```
-如果分支合并产生冲突，可merge后（可用git status查询），再次add + commit。
+如果分支合并产生冲突，可git status查询、merge、再add + commit，push之后即可delete分支。
 
 远程协作管理。
 ```git
