@@ -1,0 +1,4 @@
+*.log
+*.temp
+/folder
+MySQL.md
