@@ -1,6 +1,6 @@
 ﻿
 ## 读取网址
-```Pyhton
+```python
 from urllib.request import urlopen
 html=urlopen("http://pythonscraping.com/pages/page1.html")
 print(html.read())
@@ -14,12 +14,11 @@ html=urlopen("http://pythonscraping.com/pages/page1.html")
 bsObj=BeautifulSoup(html.read(), "html.parser")
 print(bsObj.h1)
 ```
-```python
+
 ## 异常处理
+```python
 #网页不存在urlopen抛出异常HTTPError；
-
 #服务器不存在html返回None对象；
-
 #调用不存在的标签的子标签时，发生AttributeError错误。
 
 try:
@@ -56,8 +55,36 @@ else:
     print(title)
 ```
 
+## 层叠样式表CSS
+```python
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+html=urlopen("http://pythonscraping.com/pages/warandpeace.html")
+bsObj=BeautifulSoup(html, "html.parser")
+nameList=bsObj.findAll("span",{"class":"green"})
+for name in nameList:
+    print(name.get_text())
+```
 
+## 加上正则表达式Regular Expression
+```python
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import re
+html=urlopen("http://pythonscraping.com/pages/page3.html")
+bsObj=BeautifulSoup(html, "html.parser")
+images=bsObj.findAll("img",{"src":re.compile("\.\.\/img\/gifts/img.*\.jpg")})
+for image in images:
+    print(image["src"])
+```
 
 ```python
 
+
 ```
+
+
+
+
+
+
