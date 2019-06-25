@@ -2,13 +2,15 @@
 
 This notes set contains: 
 
-Python Base Notes
+Python Base Note
 
-Crawling Notes
+Crawling Note
 
-Data Analysis Notes
+Data Analysis Note
 
-Git Notes
+Git Note
 
-Machine Learning Notes
+MySQL Note
+
+Machine Learning Note
 ...
