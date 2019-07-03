@@ -94,7 +94,7 @@ images=bsObj.findAll("img",{"src":re.compile("\.\.\/img\/gifts/img.*\.jpg")})
 # \转义 .任意单个字符 *表示0次或多次。所以规则是：../img/gifts/img1.jpg
 for image in images:
     print(image["src"])
-tag2=bsObj.findAll(lambda tag:len(tag.attrs)==2)				#获取具有两个属性的标签
+tag2=bsObj.findAll(lambda tag:len(tag.attrs)==2)			#获取具有两个属性的标签
 ```
 
 ## 维基百科六度分割理论
@@ -104,7 +104,7 @@ import urllib.parse
 from bs4 import BeautifulSoup
 html = urllib.request.urlopen("https://wikipedia.sogou.se/wiki/"+urllib.parse.quote("凯文·贝肯"))
 bsObj = BeautifulSoup(html, "html.parser")
-for link in bsObj.findAll("a"):						#标签a，属性href，值是要输出的链接
+for link in bsObj.findAll("a"):		#标签a，属性href，值是要输出的链接
     if 'href' in link.attrs:
         print(link.attrs['href'])
 ```
@@ -117,7 +117,8 @@ import re
 url="https://wikipedia.sogou.se/wiki/"+urllib.parse.quote("凯文·贝肯")
 html = request.urlopen(url)
 bsObj = BeautifulSoup(html, "html.parser")
-for link in bsObj.find("div",{"id":"bodyContent"}).findAll("a",{"href":re.compile("^(/wiki/)((?!:).)*$")}):		#注意'id'引号，写成href=re..时没有字典{}括号
+for link in bsObj.find("div",{"id":"bodyContent"}).findAll("a",{"href":re.compile("^(/wiki/)((?!:).)*$")}):
+	#注意'id'引号，写成href=re..时没有字典{}括号
     print(link.attrs['href'])
 ```
 
@@ -133,21 +134,61 @@ import datetime
 def getLinks(url):
     html = request.urlopen("https://wikipedia.sogou.se"+url)
     bsObj = BeautifulSoup(html, "html.parser")
-    return bsObj.find("div",{"id":"bodyContent"}).findAll("a",{"href":re.compile("^(/wiki/)((?!:).)*$")})	#findAll结果是列表ResultSet
+    return bsObj.find("div",{"id":"bodyContent"}).findAll("a",{"href":re.compile("^(/wiki/)((?!:).)*$")}) #findAll结果是列表ResultSet
 
 random.seed(datetime.datetime.now())
-url = "/wiki/" + urllib.parse.quote("凯文·贝肯")				#多个字符串编码用parse.urlencode()。encode编码成UTF-8码，decode解码回Unicode
+url = "/wiki/" + urllib.parse.quote("凯文·贝肯")	      #多个字符串编码用parse.urlencode()。encode编码成UTF-8码，decode解码回Unicode
 linkList = getLinks(url)
 while len(linkList)>0:
-    nextLink=linkList[random.randint(0,len(linkList)-1)].attrs['href']	#href属性值只有后半段链接
-    print(urllib.parse.unquote(nextLink))			#解码成中文unquote
+    nextLink=linkList[random.randint(0,len(linkList)-1)].attrs['href']  #href属性值只有后半段链接
+    print(urllib.parse.unquote(nextLink))	               #解码成中文unquote
     linkList=getLinks(nextLink)
 ```
-
+网页去重
 ```python
+from urllib.request import urlopen
+import urllib.parse
+from bs4 import BeautifulSoup
+import re
+pages=set()
+def getLinks(Url):
+	global pages
+	html=urlopen("https://wikipedia.sogou.se"+urllib.parse.quote(Url))		#注意大小写，"html.parser"引号
+	bsObj=BeautifulSoup(html,"html.parser")
+	for link in bsObj.findAll("a",href=re.compile("^(/wiki/)")):
+		if link.attrs['href'] not in pages:
+			newpage=link.attrs['href']
+			print(urllib.parse.unquote(newpage))
+			pages.add(newpage)
+			getLinks(newpage)
+getLinks("")		#主页
+```
+收集标题、摘要、编辑链接
+```python
+from urllib.request import urlopen
+import urllib.parse
+from bs4 import BeautifulSoup
+import re
 
+pages = set()
+def getLinks(Url):
+    global pages
+    html = urlopen("https://wikipedia.sogou.se" + (Url))  # 注意大小写，"html.parser"引号
+    bsObj = BeautifulSoup(html, "html.parser")
+    try:
+        print(bsObj.h1.get_text())		#标题
+        print(bsObj.find(id='mw-content-text').findAll('p')[0])		#正文第一段
+        print(bsObj.find(id='ca-edit').find('span').find('a').attrs['href'])	#编辑链接
+    except AttributeError:
+        print('没有子标签')
+    for link in bsObj.findAll("a", href=re.compile("^(/wiki/)")):
+        if link.attrs['href'] not in pages:
+            newpage = link.attrs['href']
+            print('------------\n' + urllib.parse.unquote(newpage))
+            pages.add(newpage)
+            getLinks(newpage)
 
-
+getLinks("")  # 主页
 ```
 
 ```python
@@ -155,9 +196,12 @@ while len(linkList)>0:
 
 
 ```
-
+大型。
 ```python
 
 
 
 ```
+
+
+
