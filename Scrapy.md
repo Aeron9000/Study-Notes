@@ -1,11 +1,11 @@
-## ´ó¸Ù
-Scrapy¼ò½é
-Scrapy°²×°
-Mongodb°²×°
-Scrapy¿ò¼Ü¡¢×é¼ş¡¢Êı¾İÁ÷
-Scrapy×¥È¡
+## å¤§çº²
+Scrapyç®€ä»‹
+Scrapyå®‰è£…
+Mongodbå®‰è£…
+Scrapyæ¡†æ¶ã€ç»„ä»¶ã€æ•°æ®æµ
+ScrapyæŠ“å–
 
-## LinuxÉÏ°²×°Scrapy
+## Linuxä¸Šå®‰è£…Scrapy
 ```Linux
 cd
 ls
@@ -13,41 +13,41 @@ pwd
 pip3 install scrapy
 yum install -y openssl-devel
 sudo
-./configure --prefix='/home/user_what/python3' --with-ssl	#PythonÊÇ±àÒë°²×°£¬µ½¸öÈËÄ¿Â¼ÏÂ°²×°£¬²»Ó°Ïì±ğÈËÏîÄ¿
+./configure --prefix='/home/user_what/python3' --with-ssl	#Pythonæ˜¯ç¼–è¯‘å®‰è£…ï¼Œåˆ°ä¸ªäººç›®å½•ä¸‹å®‰è£…ï¼Œä¸å½±å“åˆ«äººé¡¹ç›®
 make
 make install
 
-rz				#pypi ÍøÕ¾È¥ÏÂÔØTwistedÄ£¿é£¬ºóµ¼ÈëÎÄ¼ş
+rz				#pypi ç½‘ç«™å»ä¸‹è½½Twistedæ¨¡å—ï¼Œåå¯¼å…¥æ–‡ä»¶
 mv ...tar.bz2 soft/
-tar -xvjf 	#½âÑ¹Ëõ
-python3 setup.py install	#°²×°TwistedÄ£¿é
+tar -xvjf 	#è§£å‹ç¼©
+python3 setup.py install	#å®‰è£…Twistedæ¨¡å—
 cd python3/bin
 ```
 
-¶àÏß³Ì+Í·²¿ĞÅÏ¢¡¢·â×°´úÀí+·â×°Êı¾İÈ¥ÖØÀà¡¢´æ´¢Àà¡¢Òì³£¼ì²â»úÖÆ
-Scrapy£º´¿PythonÊµÏÖµÄ¿ò¼Ü£¬»ùÓÚTwistedµÄÒì²½´¦Àí¿ò¼Ü
+å¤šçº¿ç¨‹+å¤´éƒ¨ä¿¡æ¯ã€å°è£…ä»£ç†+å°è£…æ•°æ®å»é‡ç±»ã€å­˜å‚¨ç±»ã€å¼‚å¸¸æ£€æµ‹æœºåˆ¶
+Scrapyï¼šçº¯Pythonå®ç°çš„æ¡†æ¶ï¼ŒåŸºäºTwistedçš„å¼‚æ­¥å¤„ç†æ¡†æ¶
 
-## Scrapy×é¼ş½éÉÜ
-ÒıÇæ£ºÍ¨ĞÅ½»Í¨Õ¾
-µ÷¶ÈÆ÷£º¶ÓÁĞ£¬RequestsÇëÇóÅÅ¶Ó
-ÏÂÔØÆ÷£º·¢ËÍÇëÇó²¢ÏÂÔØ£¬ÏÂÔØºÃºóResponse»Ø´ğ¸øÒıÇæºó¸øÅÀ³æ
-ÅÀ³æSpiders£ºXpath»òÕıÔòµÈ½âÎö²ßÂÔ£¬´¦ÀíËùÓĞResponse»ØÓ¦£¬ÌáÈ¡Êı¾İ
-¹ÜµÀ£º·â×°È¥ÖØÀà¡¢´æ´¢Àà¡¢Êı¾İÇåÏ´
-ÏÂÔØÖĞ¼ä¼şdownload middlewares£º×Ô¶¨ÒåÀ©Õ¹£¬·â×°´úÀí
-ÅÀ³æÖĞ¼ä¼ş£º×Ô¶¨ÒåÀ©Õ¹£¬ĞŞ¸ÄRequests/Response
+## Scrapyç»„ä»¶ä»‹ç»
+å¼•æ“ï¼šé€šä¿¡äº¤é€šç«™
+è°ƒåº¦å™¨ï¼šé˜Ÿåˆ—ï¼ŒRequestsè¯·æ±‚æ’é˜Ÿ
+ä¸‹è½½å™¨ï¼šå‘é€è¯·æ±‚å¹¶ä¸‹è½½ï¼Œä¸‹è½½å¥½åResponseå›ç­”ç»™å¼•æ“åç»™çˆ¬è™«
+çˆ¬è™«Spidersï¼šXpathæˆ–æ­£åˆ™ç­‰è§£æç­–ç•¥ï¼Œå¤„ç†æ‰€æœ‰Responseå›åº”ï¼Œæå–æ•°æ®
+ç®¡é“ï¼šå°è£…å»é‡ç±»ã€å­˜å‚¨ç±»ã€æ•°æ®æ¸…æ´—
+ä¸‹è½½ä¸­é—´ä»¶download middlewaresï¼šè‡ªå®šä¹‰æ‰©å±•ï¼Œå°è£…ä»£ç†
+çˆ¬è™«ä¸­é—´ä»¶ï¼šè‡ªå®šä¹‰æ‰©å±•ï¼Œä¿®æ”¹Requests/Response
 
-## Àı×Ó
-²½Öè£º
-1.ĞÂ½¨ÏîÄ¿
+## ä¾‹å­
+æ­¥éª¤ï¼š
+1.æ–°å»ºé¡¹ç›®
 	scrapy startproject douban
-	scrapy genspider douban_spider movie.douban.com		#ÅÀ³æÎÄ¼ş
-2.Ã÷È·Ä¿±ê£ºÃû³Æ£¬ĞòºÅ£¬ÃèÊö£¬µ¼Ñİ£¬ĞÅÏ¢£¬ÔÚitemÎÄµµ
-3.½¨Á¢ÅÀ³æ£¬ÔÚSpyderÎÄµµ
-4.´æ´¢Êı¾İ
+	scrapy genspider douban_spider movie.douban.com		#çˆ¬è™«æ–‡ä»¶
+2.æ˜ç¡®ç›®æ ‡ï¼šåç§°ï¼Œåºå·ï¼Œæè¿°ï¼Œå¯¼æ¼”ï¼Œä¿¡æ¯ï¼Œåœ¨itemæ–‡æ¡£
+3.å»ºç«‹çˆ¬è™«ï¼Œåœ¨Spyderæ–‡æ¡£
+4.å­˜å‚¨æ•°æ®
 
-Settings.pyÎÄ¼şÖĞĞŞ¸Ä: USER_AGENT¡£
+Settings.pyæ–‡ä»¶ä¸­ä¿®æ”¹: USER_AGENTã€‚
 
-ÔÚitems.pyÎÄµµ¶¨Òå£º
+åœ¨items.pyæ–‡æ¡£å®šä¹‰ï¼š
 ```python
 class DoubanItem(scrapy.Item):
     # name = scrapy.Field()
@@ -55,32 +55,32 @@ class DoubanItem(scrapy.Item):
     movie_name=scrapy.Field()
 ```
 
-ÃüÁîĞĞÖĞÊäÈë"scrapy crawl douban_spider"£¬»òÕßÔÚ½¨Á¢µÄmain.pyÎÄ¼şÀï£º
+å‘½ä»¤è¡Œä¸­è¾“å…¥"scrapy crawl douban_spider"ï¼Œæˆ–è€…åœ¨å»ºç«‹çš„main.pyæ–‡ä»¶é‡Œï¼š
 ```python
 from scrapy import cmdline
 cmdline.execute('scrapy crawl douban_spider'.split())
 ```
 
 
-1. ÔÚdouban_spider.pyÎÄ¼şÖĞĞŞ¸Ä£¬³õ´ÎÅÀÈ¡£º
+1. åœ¨douban_spider.pyæ–‡ä»¶ä¸­ä¿®æ”¹ï¼Œåˆæ¬¡çˆ¬å–ï¼š
 ```python
 import scrapy
 class DoubanSpiderSpider(scrapy.Spider):
-    name = 'douban_spider'								#ÅÀ³æÃû
-    allowed_domains = ['movie.douban.com']		#ÔÊĞíµÄÓòÃû
-	start_urls = ['https://movie.douban.com/top250']		#Èë¿Úurl£¬ÈÓµ½ScheduleÀï
-    #½âÎö
+    name = 'douban_spider'								#çˆ¬è™«å
+    allowed_domains = ['movie.douban.com']		#å…è®¸çš„åŸŸå
+	start_urls = ['https://movie.douban.com/top250']		#å…¥å£urlï¼Œæ‰”åˆ°Scheduleé‡Œ
+    #è§£æ
 	def parse(self, response):		
         print(response.text)
 ```
 
-2. ÅÀÈ¡µçÓ°ĞòºÅ£º
+2. çˆ¬å–ç”µå½±åºå·ï¼š
 ```python
 import scrapy
 from douban.items import DoubanItem
 class DoubanSpiderSpider(scrapy.Spider):
-	#Ê¡ÂÔ......
-    #½âÎö£¬ÌáÈ¡ĞòºÅ
+	#çœç•¥......
+    #è§£æï¼Œæå–åºå·
     def parse(self, response):
         movie_list=response.xpath("//div[@class='article']//ol[@class='grid_view']/li")
         for i_item in movie_list:
@@ -89,9 +89,9 @@ class DoubanSpiderSpider(scrapy.Spider):
             print(douban_item)
 ```
 
-3. ¼ÓÉÏµçÓ°ĞÅÏ¢£º
+3. åŠ ä¸Šç”µå½±ä¿¡æ¯ï¼š
 ```python
-    #½âÎö
+    #è§£æ
     def parse(self, response):
         movie_list=response.xpath("//div[@class='article']//ol[@class='grid_view']/li")
         for i_item in movie_list:
@@ -100,17 +100,12 @@ class DoubanSpiderSpider(scrapy.Spider):
             douban_item['movie_name']=i_item.xpath(".//div[@class='info']/div[@class='hd']/a/span[1]/text()").extract_first()
             content=i_item.xpath(".//div[@class='info']//div[@class='bd']/p[1]/text()").extract()
             for i_content in content:
-                content_s="".join(i_content.split())        #È¥µô¿Õ¸ñ
+                content_s="".join(i_content.split())        #å»æ‰ç©ºæ ¼
                 douban_item['introduce']=content_s
             douban_item['star'] = i_item.xpath(".//span[@class='rating_num']/text()").extract_first()
             douban_item['evaluate'] = i_item.xpath(".//div[@class='star']//span[4]/text()").extract_first()
             douban_item['describe'] = i_item.xpath(".//p[@class='quote']/span/text()").extract_first()
-            yield douban_item   #yieldµ½¹ÜµÀÀï
+            yield douban_item   #yieldåˆ°ç®¡é“é‡Œ
 		   
 		   
 ```
-
-
-
-
-
