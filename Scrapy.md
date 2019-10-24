@@ -85,7 +85,7 @@ class DoubanSpiderSpider(scrapy.Spider):
         movie_list=response.xpath("//div[@class='article']//ol[@class='grid_view']/li")
         for i_item in movie_list:
             douban_item=DoubanItem()
-            douban_item['serial_number']=i_item.xpath(".//div[@class='item']//em/text()").extract_first()
+            douban_item['serial_number']=i_item.xpath(".//div[@class='item']//em/text()").extract_first()		#em强调标签，emphasize
             print(douban_item)
 ```
 
